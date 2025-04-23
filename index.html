@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="display" disabled style="width: 100%; height: 60px; text-align: right; font-size: 1.5em; margin-bottom: 10px;">
+        <button class="one2">AC</button>
+        <button class="one3">DEL</button>
+        <button class="one4">.</button>
+        <button class="one5">/</button>
+        <button class="one6">7</button>
+        <button class="one7">8</button>
+        <button class="one8">9</button>
+        <button class="one9">*</button>
+        <button class="one10">4</button>
+        <button class="one11">5</button>
+        <button class="one12">6</button>
+        <button class="one13">-</button>
+        <button class="one14">1</button>
+        <button class="one15">2</button>
+        <button class="one16">3</button>
+        <button class="one17">+</button>
+        <button class="one18">00</button>
+        <button class="one19">0</button>
+        <button class="one20" style="flex: 0.8; color: orange;">=</button>
+    </div>
+    
+    <script>
+        const display = document.getElementById('display');
+        const buttons = document.querySelectorAll('button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.textContent;
+
+                if (value === 'AC') {
+                    display.value = ''; // Clear the display
+                } else if (value === 'DEL') {
+                    display.value = display.value.slice(0, -1); // Remove the last character
+                } else if (value === '=') {
+                    try {
+                        display.value = eval(display.value); // Evaluate the expression
+                    } catch {
+                        display.value = 'Error'; // Handle invalid expressions
+                    }
+                } else {
+                    display.value += value; // Append the button value to the display
+                }
+            });
+        });
+    </script>
+</body>
+</html>
