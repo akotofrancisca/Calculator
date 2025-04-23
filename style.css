@@ -3,6 +3,7 @@
     padding:0; 
     box-sizing: border-box;
 }
+/*The cointainer*/
 .container{
     max-width: 320px;
     max-height: 550px;
@@ -17,6 +18,7 @@
     justify-content: center;
     border-radius: 10px;
 }
+/*The buttons in the cointainer*/
 .container>button{
     width: 50px;
     height: 50px;
@@ -28,6 +30,7 @@
     color: rgb(222, 240, 255);
     font-size: 20px;
 }
+/*The buttons in the cointainer when hovered on*/
 .container>button:hover{
     background-color: rgba(10, 9, 9, 0.733);
     box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.078), 1px 1px 10px rgba(255, 255, 255, 0.078);
@@ -36,7 +39,7 @@
     opacity: 0.6;
     transition: 0.3s;
 }
-
+/*color of the specified buttons*/
 div .one2{
     color: orange;
 }
